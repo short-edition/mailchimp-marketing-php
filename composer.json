@@ -1,5 +1,5 @@
 {
-    "name": "mailchimp/marketing",
+    "name": "short-edition/marketing",
     "version": "3.0.80",
     "description": "",
     "keywords": [
@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=8.3",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",

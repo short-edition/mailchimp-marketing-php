@@ -19,13 +19,14 @@
 
 namespace MailchimpMarketing;
 
+use AllowDynamicProperties;
 use MailchimpMarketing\Api\AccountExportApi;
 use MailchimpMarketing\Api\AccountExportsApi;
 use MailchimpMarketing\Api\ActivityFeedApi;
 use MailchimpMarketing\Api\AuthorizedAppsApi;
 use MailchimpMarketing\Api\AutomationsApi;
-use MailchimpMarketing\Api\BatchWebhooksApi;
 use MailchimpMarketing\Api\BatchesApi;
+use MailchimpMarketing\Api\BatchWebhooksApi;
 use MailchimpMarketing\Api\CampaignFoldersApi;
 use MailchimpMarketing\Api\CampaignsApi;
 use MailchimpMarketing\Api\ConnectedSitesApi;
@@ -47,21 +48,22 @@ use MailchimpMarketing\Api\TemplateFoldersApi;
 use MailchimpMarketing\Api\TemplatesApi;
 use MailchimpMarketing\Api\VerifiedDomainsApi;
 
+#[AllowDynamicProperties]
 class Configuration
 {
-    private static $defaultConfiguration;
+    private static Configuration $defaultConfiguration;
 
-    protected $apiKeys = [];
-    protected $apiKeyPrefixes = [];
-    protected $accessToken = '';
-    protected $username = '';
-    protected $password = '';
-    protected $host = 'https://server.api.mailchimp.com/3.0';
-    protected $userAgent = 'Swagger-Codegen/3.0.80/php';
-    protected $debug = false;
-    protected $debugFile = 'php://output';
-    protected $tempFolderPath;
-    protected $timeout = 120;
+    protected array $apiKeys = [];
+    protected array $apiKeyPrefixes = [];
+    protected string $accessToken = '';
+    protected string $username = '';
+    protected string $password = '';
+    protected string $host = 'https://server.api.mailchimp.com/3.0';
+    protected string $userAgent = 'Swagger-Codegen/3.0.80/php';
+    protected bool $debug = false;
+    protected string $debugFile = 'php://output';
+    protected string $tempFolderPath;
+    protected int $timeout = 120;
 
     public function __construct()
     {
@@ -96,20 +98,18 @@ class Configuration
         $this->verifiedDomains = new VerifiedDomainsApi($this);
     }
 
-    public function setConfig($config = array())
+    public function setConfig($config = array()): static
     {
-        $apiKey = isset($config['apiKey']) ? $config['apiKey'] : '';
-        $accessToken = isset($config['accessToken']) ? $config['accessToken'] : '';
-        $server = isset($config['server']) ? $config['server'] : 'invalid-server';
+        $apiKey = $config['apiKey'] ?? '';
+        $accessToken = $config['accessToken'] ?? '';
+        $server = $config['server'] ?? 'invalid-server';
         $host = str_replace('server', $server, $this->getHost());
 
         // Basic Authentication
         if (!empty($apiKey)) {
             $this->setUsername('user');
             $this->setPassword($apiKey);
-        }
-
-        // OAuth Authentication
+        } // OAuth Authentication
         elseif (!empty($accessToken)) {
             $this->accessToken = $accessToken;
         }
@@ -123,7 +123,7 @@ class Configuration
         return $this;
     }
 
-    public function setApiKey($apiKeyIdentifier, $key)
+    public function setApiKey($apiKeyIdentifier, $key): static
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
@@ -131,10 +131,10 @@ class Configuration
 
     public function getApiKey($apiKeyIdentifier)
     {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
+        return $this->apiKeys[$apiKeyIdentifier] ?? null;
     }
 
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
+    public function setApiKeyPrefix($apiKeyIdentifier, $prefix): static
     {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
         return $this;
@@ -142,54 +142,54 @@ class Configuration
 
     public function getApiKeyPrefix($apiKeyIdentifier)
     {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
+        return $this->apiKeyPrefixes[$apiKeyIdentifier] ?? null;
     }
 
-    public function setAccessToken($accessToken)
+    public function setAccessToken($accessToken): static
     {
         $this->accessToken = $accessToken;
         return $this;
     }
 
-    public function getAccessToken()
+    public function getAccessToken(): string
     {
         return $this->accessToken;
     }
 
-    public function setUsername($username)
+    public function setUsername($username): static
     {
         $this->username = $username;
         return $this;
     }
 
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
 
-    public function setPassword($password)
+    public function setPassword($password): static
     {
         $this->password = $password;
         return $this;
     }
 
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    public function setHost($host)
+    public function setHost($host): static
     {
         $this->host = $host;
         return $this;
     }
 
-    public function getHost()
+    public function getHost(): string
     {
         return $this->host;
     }
 
-    public function setUserAgent($userAgent)
+    public function setUserAgent($userAgent): static
     {
         if (!is_string($userAgent)) {
             throw new \InvalidArgumentException('User-agent must be a string.');
@@ -199,55 +199,55 @@ class Configuration
         return $this;
     }
 
-    public function getUserAgent()
+    public function getUserAgent(): string
     {
         return $this->userAgent;
     }
 
-    public function setDebug($debug)
+    public function setDebug($debug): static
     {
         $this->debug = $debug;
         return $this;
     }
 
-    public function getDebug()
+    public function getDebug(): bool
     {
         return $this->debug;
     }
 
-    public function setDebugFile($debugFile)
+    public function setDebugFile($debugFile): static
     {
         $this->debugFile = $debugFile;
         return $this;
     }
 
-    public function getDebugFile()
+    public function getDebugFile(): string
     {
         return $this->debugFile;
     }
 
-    public function setTempFolderPath($tempFolderPath)
+    public function setTempFolderPath($tempFolderPath): static
     {
         $this->tempFolderPath = $tempFolderPath;
         return $this;
     }
 
-    public function getTempFolderPath()
+    public function getTempFolderPath(): string
     {
         return $this->tempFolderPath;
     }
 
-    public function setTimeout($timeout)
+    public function setTimeout($timeout): void
     {
         $this->timeout = $timeout;
     }
 
-    public function getTimeout()
+    public function getTimeout(): int
     {
         return $this->timeout;
     }
 
-    public static function getDefaultConfiguration()
+    public static function getDefaultConfiguration(): Configuration
     {
         if (self::$defaultConfiguration === null) {
             self::$defaultConfiguration = new Configuration();
@@ -256,19 +256,19 @@ class Configuration
         return self::$defaultConfiguration;
     }
 
-    public static function setDefaultConfiguration(Configuration $config)
+    public static function setDefaultConfiguration(Configuration $config): void
     {
         self::$defaultConfiguration = $config;
     }
 
-    public static function toDebugReport()
+    public static function toDebugReport(): string
     {
-        $report  = 'PHP SDK (MailchimpMarketing) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 3.0.80' . PHP_EOL;
-        $report .= '    SDK Package Version: 3.0.80' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
+        $report = 'PHP SDK (MailchimpMarketing) Debug Report:'.PHP_EOL;
+        $report .= '    OS: '.php_uname().PHP_EOL;
+        $report .= '    PHP Version: '.PHP_VERSION.PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 3.0.80'.PHP_EOL;
+        $report .= '    SDK Package Version: 3.0.80'.PHP_EOL;
+        $report .= '    Temp Folder Path: '.self::getDefaultConfiguration()->getTempFolderPath().PHP_EOL;
 
         return $report;
     }
@@ -285,7 +285,7 @@ class Configuration
         if ($prefix === null) {
             $keyWithPrefix = $apiKey;
         } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
+            $keyWithPrefix = $prefix.' '.$apiKey;
         }
 
         return $keyWithPrefix;

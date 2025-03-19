@@ -47,7 +47,7 @@ class AutomationsApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(Configuration $config = null)
+    public function __construct(?Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -125,7 +125,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -149,7 +149,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -179,12 +179,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -201,7 +201,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -275,7 +275,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -283,7 +283,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -307,7 +307,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -337,12 +337,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -359,7 +359,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -434,16 +434,16 @@ class AutomationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($before_create_time !== null) {
             $queryParams['before_create_time'] = ObjectSerializer::toQueryValue($before_create_time);
@@ -484,7 +484,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -514,12 +514,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -536,7 +536,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -605,21 +605,21 @@ class AutomationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -643,7 +643,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -673,12 +673,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -695,7 +695,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -764,7 +764,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -788,7 +788,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -818,12 +818,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -840,7 +840,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -915,7 +915,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -923,7 +923,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -947,7 +947,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -977,12 +977,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -999,7 +999,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1074,7 +1074,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -1082,7 +1082,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -1106,7 +1106,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1136,12 +1136,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1158,7 +1158,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1239,7 +1239,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -1247,7 +1247,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -1255,7 +1255,7 @@ class AutomationsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscriber_hash' . '}',
+                '{'.'subscriber_hash'.'}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -1279,7 +1279,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1309,12 +1309,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1331,7 +1331,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1400,7 +1400,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -1424,7 +1424,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1454,12 +1454,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1476,7 +1476,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1551,7 +1551,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -1559,7 +1559,7 @@ class AutomationsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscriber_hash' . '}',
+                '{'.'subscriber_hash'.'}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -1583,7 +1583,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1613,12 +1613,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1635,7 +1635,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1716,7 +1716,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -1724,7 +1724,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -1751,7 +1751,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1781,12 +1781,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1803,7 +1803,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1891,7 +1891,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1921,12 +1921,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1943,7 +1943,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2011,7 +2011,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2035,7 +2035,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2065,12 +2065,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2087,7 +2087,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2155,7 +2155,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2179,7 +2179,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2209,12 +2209,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2231,7 +2231,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2305,7 +2305,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2313,7 +2313,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -2337,7 +2337,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2367,12 +2367,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2389,7 +2389,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2463,7 +2463,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2471,7 +2471,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -2495,7 +2495,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2525,12 +2525,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2547,7 +2547,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2628,7 +2628,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2636,7 +2636,7 @@ class AutomationsApi
         // path params
         if ($workflow_email_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_email_id' . '}',
+                '{'.'workflow_email_id'.'}',
                 ObjectSerializer::toPathValue($workflow_email_id),
                 $resourcePath
             );
@@ -2663,7 +2663,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2693,12 +2693,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2715,7 +2715,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2790,7 +2790,7 @@ class AutomationsApi
         // path params
         if ($workflow_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'workflow_id' . '}',
+                '{'.'workflow_id'.'}',
                 ObjectSerializer::toPathValue($workflow_id),
                 $resourcePath
             );
@@ -2817,7 +2817,7 @@ class AutomationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2847,12 +2847,12 @@ class AutomationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2869,7 +2869,7 @@ class AutomationsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2881,7 +2881,7 @@ class AutomationsApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 

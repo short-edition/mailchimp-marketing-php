@@ -47,7 +47,7 @@ class RootApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(Configuration $config = null)
+    public function __construct(?Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -120,16 +120,16 @@ class RootApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
 
         // body params
@@ -150,7 +150,7 @@ class RootApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -180,12 +180,12 @@ class RootApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -202,7 +202,7 @@ class RootApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -214,7 +214,7 @@ class RootApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 

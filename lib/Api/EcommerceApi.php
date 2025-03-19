@@ -47,7 +47,7 @@ class EcommerceApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(Configuration $config = null)
+    public function __construct(?Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -126,7 +126,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -150,7 +150,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -180,12 +180,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -202,7 +202,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -276,7 +276,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -284,7 +284,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -308,7 +308,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -338,12 +338,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -360,7 +360,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -440,7 +440,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -448,7 +448,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -456,7 +456,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -480,7 +480,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -510,12 +510,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -532,7 +532,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -606,7 +606,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -614,7 +614,7 @@ class EcommerceApi
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_id' . '}',
+                '{'.'customer_id'.'}',
                 ObjectSerializer::toPathValue($customer_id),
                 $resourcePath
             );
@@ -638,7 +638,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -668,12 +668,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -690,7 +690,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -764,7 +764,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -772,7 +772,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -796,7 +796,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -826,12 +826,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -848,7 +848,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -928,7 +928,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -936,7 +936,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -944,7 +944,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -968,7 +968,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -998,12 +998,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1020,7 +1020,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1094,7 +1094,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -1102,7 +1102,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -1126,7 +1126,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1156,12 +1156,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1178,7 +1178,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1258,7 +1258,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -1266,7 +1266,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -1274,7 +1274,7 @@ class EcommerceApi
         // path params
         if ($image_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'image_id' . '}',
+                '{'.'image_id'.'}',
                 ObjectSerializer::toPathValue($image_id),
                 $resourcePath
             );
@@ -1298,7 +1298,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1328,12 +1328,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1350,7 +1350,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1430,7 +1430,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -1438,7 +1438,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -1446,7 +1446,7 @@ class EcommerceApi
         // path params
         if ($variant_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'variant_id' . '}',
+                '{'.'variant_id'.'}',
                 ObjectSerializer::toPathValue($variant_id),
                 $resourcePath
             );
@@ -1470,7 +1470,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1500,12 +1500,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1522,7 +1522,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1602,7 +1602,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -1610,7 +1610,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -1618,7 +1618,7 @@ class EcommerceApi
         // path params
         if ($promo_code_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_code_id' . '}',
+                '{'.'promo_code_id'.'}',
                 ObjectSerializer::toPathValue($promo_code_id),
                 $resourcePath
             );
@@ -1642,7 +1642,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1672,12 +1672,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1694,7 +1694,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1768,7 +1768,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -1776,7 +1776,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -1800,7 +1800,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1830,12 +1830,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1852,7 +1852,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1919,16 +1919,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -1973,7 +1973,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2003,12 +2003,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2025,7 +2025,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2092,16 +2092,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2130,7 +2130,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2160,12 +2160,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2182,7 +2182,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2251,21 +2251,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -2289,7 +2289,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2319,12 +2319,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2341,7 +2341,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2414,16 +2414,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2436,7 +2436,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -2460,7 +2460,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2490,12 +2490,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2512,7 +2512,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2587,21 +2587,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -2609,7 +2609,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -2633,7 +2633,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2663,12 +2663,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2685,7 +2685,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2764,16 +2764,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2786,7 +2786,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -2794,7 +2794,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -2818,7 +2818,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2848,12 +2848,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2870,7 +2870,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2951,21 +2951,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -2973,7 +2973,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -2981,7 +2981,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -3005,7 +3005,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3035,12 +3035,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3057,7 +3057,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3130,16 +3130,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -3156,7 +3156,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -3180,7 +3180,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3210,12 +3210,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3232,7 +3232,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3307,21 +3307,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -3329,7 +3329,7 @@ class EcommerceApi
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_id' . '}',
+                '{'.'customer_id'.'}',
                 ObjectSerializer::toPathValue($customer_id),
                 $resourcePath
             );
@@ -3353,7 +3353,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3383,12 +3383,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3405,7 +3405,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3478,16 +3478,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -3516,7 +3516,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -3540,7 +3540,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3570,12 +3570,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3592,7 +3592,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3667,21 +3667,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -3689,7 +3689,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3713,7 +3713,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3743,12 +3743,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3765,7 +3765,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3844,16 +3844,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -3866,7 +3866,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -3874,7 +3874,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3898,7 +3898,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3928,12 +3928,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3950,7 +3950,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4031,21 +4031,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4053,7 +4053,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4061,7 +4061,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -4085,7 +4085,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4115,12 +4115,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4137,7 +4137,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4210,16 +4210,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -4232,7 +4232,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4256,7 +4256,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4286,12 +4286,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4308,7 +4308,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4383,21 +4383,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4405,7 +4405,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -4429,7 +4429,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4459,12 +4459,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4481,7 +4481,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4560,16 +4560,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -4582,7 +4582,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4590,7 +4590,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -4614,7 +4614,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4644,12 +4644,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4666,7 +4666,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4747,21 +4747,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4769,7 +4769,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -4777,7 +4777,7 @@ class EcommerceApi
         // path params
         if ($image_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'image_id' . '}',
+                '{'.'image_id'.'}',
                 ObjectSerializer::toPathValue($image_id),
                 $resourcePath
             );
@@ -4801,7 +4801,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4831,12 +4831,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4853,7 +4853,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4932,16 +4932,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -4954,7 +4954,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -4962,7 +4962,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -4986,7 +4986,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5016,12 +5016,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5038,7 +5038,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5119,21 +5119,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -5141,7 +5141,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -5149,7 +5149,7 @@ class EcommerceApi
         // path params
         if ($variant_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'variant_id' . '}',
+                '{'.'variant_id'.'}',
                 ObjectSerializer::toPathValue($variant_id),
                 $resourcePath
             );
@@ -5173,7 +5173,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5203,12 +5203,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5225,7 +5225,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5304,16 +5304,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -5326,7 +5326,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -5334,7 +5334,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -5358,7 +5358,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5388,12 +5388,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5410,7 +5410,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5491,21 +5491,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -5513,7 +5513,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -5521,7 +5521,7 @@ class EcommerceApi
         // path params
         if ($promo_code_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_code_id' . '}',
+                '{'.'promo_code_id'.'}',
                 ObjectSerializer::toPathValue($promo_code_id),
                 $resourcePath
             );
@@ -5545,7 +5545,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5575,12 +5575,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5597,7 +5597,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5670,16 +5670,16 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -5692,7 +5692,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -5716,7 +5716,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5746,12 +5746,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5768,7 +5768,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5843,21 +5843,21 @@ class EcommerceApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -5865,7 +5865,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -5889,7 +5889,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5919,12 +5919,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5941,7 +5941,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6016,7 +6016,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6043,7 +6043,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6073,12 +6073,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6095,7 +6095,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6176,7 +6176,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6184,7 +6184,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -6211,7 +6211,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6241,12 +6241,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6263,7 +6263,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6350,7 +6350,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6358,7 +6358,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -6366,7 +6366,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -6393,7 +6393,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6423,12 +6423,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6445,7 +6445,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6526,7 +6526,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6534,7 +6534,7 @@ class EcommerceApi
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_id' . '}',
+                '{'.'customer_id'.'}',
                 ObjectSerializer::toPathValue($customer_id),
                 $resourcePath
             );
@@ -6561,7 +6561,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6591,12 +6591,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6613,7 +6613,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6694,7 +6694,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6702,7 +6702,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -6729,7 +6729,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6759,12 +6759,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6781,7 +6781,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6868,7 +6868,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -6876,7 +6876,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -6884,7 +6884,7 @@ class EcommerceApi
         // path params
         if ($line_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'line_id' . '}',
+                '{'.'line_id'.'}',
                 ObjectSerializer::toPathValue($line_id),
                 $resourcePath
             );
@@ -6911,7 +6911,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6941,12 +6941,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6963,7 +6963,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7044,7 +7044,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -7052,7 +7052,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -7079,7 +7079,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7109,12 +7109,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7131,7 +7131,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7218,7 +7218,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -7226,7 +7226,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -7234,7 +7234,7 @@ class EcommerceApi
         // path params
         if ($image_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'image_id' . '}',
+                '{'.'image_id'.'}',
                 ObjectSerializer::toPathValue($image_id),
                 $resourcePath
             );
@@ -7261,7 +7261,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7291,12 +7291,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7313,7 +7313,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7400,7 +7400,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -7408,7 +7408,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -7416,7 +7416,7 @@ class EcommerceApi
         // path params
         if ($variant_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'variant_id' . '}',
+                '{'.'variant_id'.'}',
                 ObjectSerializer::toPathValue($variant_id),
                 $resourcePath
             );
@@ -7443,7 +7443,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7473,12 +7473,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7495,7 +7495,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7582,7 +7582,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -7590,7 +7590,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -7598,7 +7598,7 @@ class EcommerceApi
         // path params
         if ($promo_code_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_code_id' . '}',
+                '{'.'promo_code_id'.'}',
                 ObjectSerializer::toPathValue($promo_code_id),
                 $resourcePath
             );
@@ -7625,7 +7625,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7655,12 +7655,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7677,7 +7677,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7758,7 +7758,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -7766,7 +7766,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -7793,7 +7793,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7823,12 +7823,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7845,7 +7845,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7933,7 +7933,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7963,12 +7963,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7985,7 +7985,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8060,7 +8060,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8087,7 +8087,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8117,12 +8117,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8139,7 +8139,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8220,7 +8220,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8228,7 +8228,7 @@ class EcommerceApi
         // path params
         if ($cart_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'cart_id' . '}',
+                '{'.'cart_id'.'}',
                 ObjectSerializer::toPathValue($cart_id),
                 $resourcePath
             );
@@ -8255,7 +8255,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8285,12 +8285,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8307,7 +8307,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8382,7 +8382,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8409,7 +8409,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8439,12 +8439,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8461,7 +8461,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8536,7 +8536,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8563,7 +8563,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8593,12 +8593,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8615,7 +8615,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8696,7 +8696,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8704,7 +8704,7 @@ class EcommerceApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'order_id' . '}',
+                '{'.'order_id'.'}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -8731,7 +8731,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8761,12 +8761,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8783,7 +8783,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8858,7 +8858,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -8885,7 +8885,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8915,12 +8915,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8937,7 +8937,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9018,7 +9018,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9026,7 +9026,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -9053,7 +9053,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9083,12 +9083,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9105,7 +9105,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9186,7 +9186,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9194,7 +9194,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -9221,7 +9221,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9251,12 +9251,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9273,7 +9273,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9354,7 +9354,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9362,7 +9362,7 @@ class EcommerceApi
         // path params
         if ($promo_rule_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'promo_rule_id' . '}',
+                '{'.'promo_rule_id'.'}',
                 ObjectSerializer::toPathValue($promo_rule_id),
                 $resourcePath
             );
@@ -9389,7 +9389,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9419,12 +9419,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9441,7 +9441,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9516,7 +9516,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9543,7 +9543,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9573,12 +9573,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9595,7 +9595,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9676,7 +9676,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9684,7 +9684,7 @@ class EcommerceApi
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_id' . '}',
+                '{'.'customer_id'.'}',
                 ObjectSerializer::toPathValue($customer_id),
                 $resourcePath
             );
@@ -9711,7 +9711,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9741,12 +9741,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9763,7 +9763,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9850,7 +9850,7 @@ class EcommerceApi
         // path params
         if ($store_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'store_id' . '}',
+                '{'.'store_id'.'}',
                 ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
@@ -9858,7 +9858,7 @@ class EcommerceApi
         // path params
         if ($product_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'product_id' . '}',
+                '{'.'product_id'.'}',
                 ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
@@ -9866,7 +9866,7 @@ class EcommerceApi
         // path params
         if ($variant_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'variant_id' . '}',
+                '{'.'variant_id'.'}',
                 ObjectSerializer::toPathValue($variant_id),
                 $resourcePath
             );
@@ -9893,7 +9893,7 @@ class EcommerceApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9923,12 +9923,12 @@ class EcommerceApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9945,7 +9945,7 @@ class EcommerceApi
         $query = Query::build($queryParams);
         return new Request(
             'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9957,7 +9957,7 @@ class EcommerceApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 

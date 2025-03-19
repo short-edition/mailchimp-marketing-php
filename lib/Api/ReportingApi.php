@@ -47,7 +47,7 @@ class ReportingApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(Configuration $config = null)
+    public function __construct(?Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -124,16 +124,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -170,7 +170,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -200,12 +200,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -222,7 +222,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -291,21 +291,21 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -329,7 +329,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -359,12 +359,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -381,7 +381,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -454,16 +454,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -480,7 +480,7 @@ class ReportingApi
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -504,7 +504,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -534,12 +534,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -556,7 +556,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -623,16 +623,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -661,7 +661,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -691,12 +691,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -713,7 +713,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -782,21 +782,21 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -820,7 +820,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -850,12 +850,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -872,7 +872,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -939,16 +939,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -977,7 +977,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1007,12 +1007,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1029,7 +1029,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1098,21 +1098,21 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1136,7 +1136,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1166,12 +1166,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1188,7 +1188,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1257,21 +1257,21 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1295,7 +1295,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1325,12 +1325,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1347,7 +1347,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1422,21 +1422,21 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
 
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1444,7 +1444,7 @@ class ReportingApi
         // path params
         if ($question_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'question_id' . '}',
+                '{'.'question_id'.'}',
                 ObjectSerializer::toPathValue($question_id),
                 $resourcePath
             );
@@ -1468,7 +1468,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1498,12 +1498,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1520,7 +1520,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1595,16 +1595,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($respondent_familiarity_is !== null) {
             $queryParams['respondent_familiarity_is'] = ObjectSerializer::toQueryValue($respondent_familiarity_is);
@@ -1613,7 +1613,7 @@ class ReportingApi
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1621,7 +1621,7 @@ class ReportingApi
         // path params
         if ($question_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'question_id' . '}',
+                '{'.'question_id'.'}',
                 ObjectSerializer::toPathValue($question_id),
                 $resourcePath
             );
@@ -1645,7 +1645,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1675,12 +1675,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1697,7 +1697,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1766,16 +1766,16 @@ class ReportingApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-        if ($fields !== null) {
-            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-        }
+            if ($fields !== null) {
+                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+            }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-        if ($exclude_fields !== null) {
-            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-        }
+            if ($exclude_fields !== null) {
+                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+            }
         // query params
         if ($answered_question !== null) {
             $queryParams['answered_question'] = ObjectSerializer::toQueryValue($answered_question);
@@ -1792,7 +1792,7 @@ class ReportingApi
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1816,7 +1816,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1846,12 +1846,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1868,7 +1868,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1943,7 +1943,7 @@ class ReportingApi
         // path params
         if ($outreach_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'outreach_id' . '}',
+                '{'.'outreach_id'.'}',
                 ObjectSerializer::toPathValue($outreach_id),
                 $resourcePath
             );
@@ -1951,7 +1951,7 @@ class ReportingApi
         // path params
         if ($response_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'response_id' . '}',
+                '{'.'response_id'.'}',
                 ObjectSerializer::toPathValue($response_id),
                 $resourcePath
             );
@@ -1975,7 +1975,7 @@ class ReportingApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2005,12 +2005,12 @@ class ReportingApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2027,7 +2027,7 @@ class ReportingApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2039,7 +2039,7 @@ class ReportingApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
