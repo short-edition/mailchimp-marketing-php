@@ -47,7 +47,7 @@ class ConversationsApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(Configuration $config = null)
+    public function __construct(?Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
