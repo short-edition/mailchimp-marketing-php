@@ -47,7 +47,7 @@ class ConversationsApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(?Configuration $config = null)
+    public function __construct(Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -124,16 +124,16 @@ class ConversationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -174,7 +174,7 @@ class ConversationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -204,12 +204,12 @@ class ConversationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -226,7 +226,7 @@ class ConversationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -295,21 +295,21 @@ class ConversationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($conversation_id !== null) {
             $resourcePath = str_replace(
-                '{'.'conversation_id'.'}',
+                '{' . 'conversation_id' . '}',
                 ObjectSerializer::toPathValue($conversation_id),
                 $resourcePath
             );
@@ -333,7 +333,7 @@ class ConversationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -363,12 +363,12 @@ class ConversationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -385,7 +385,7 @@ class ConversationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -454,16 +454,16 @@ class ConversationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($is_read !== null) {
             $queryParams['is_read'] = ObjectSerializer::toQueryValue($is_read);
@@ -480,7 +480,7 @@ class ConversationsApi
         // path params
         if ($conversation_id !== null) {
             $resourcePath = str_replace(
-                '{'.'conversation_id'.'}',
+                '{' . 'conversation_id' . '}',
                 ObjectSerializer::toPathValue($conversation_id),
                 $resourcePath
             );
@@ -504,7 +504,7 @@ class ConversationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -534,12 +534,12 @@ class ConversationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -556,7 +556,7 @@ class ConversationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -631,21 +631,21 @@ class ConversationsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($conversation_id !== null) {
             $resourcePath = str_replace(
-                '{'.'conversation_id'.'}',
+                '{' . 'conversation_id' . '}',
                 ObjectSerializer::toPathValue($conversation_id),
                 $resourcePath
             );
@@ -653,7 +653,7 @@ class ConversationsApi
         // path params
         if ($message_id !== null) {
             $resourcePath = str_replace(
-                '{'.'message_id'.'}',
+                '{' . 'message_id' . '}',
                 ObjectSerializer::toPathValue($message_id),
                 $resourcePath
             );
@@ -677,7 +677,7 @@ class ConversationsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -707,12 +707,12 @@ class ConversationsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -729,7 +729,7 @@ class ConversationsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -741,7 +741,7 @@ class ConversationsApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

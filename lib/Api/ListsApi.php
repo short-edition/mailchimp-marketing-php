@@ -47,7 +47,7 @@ class ListsApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(?Configuration $config = null)
+    public function __construct(Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -125,7 +125,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -149,7 +149,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -179,12 +179,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -201,7 +201,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -275,7 +275,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -283,7 +283,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -307,7 +307,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -337,12 +337,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -359,7 +359,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -439,7 +439,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -447,7 +447,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -455,7 +455,7 @@ class ListsApi
         // path params
         if ($interest_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_id'.'}',
+                '{' . 'interest_id' . '}',
                 ObjectSerializer::toPathValue($interest_id),
                 $resourcePath
             );
@@ -479,7 +479,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -509,12 +509,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -531,7 +531,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -605,7 +605,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -613,7 +613,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -637,7 +637,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -667,12 +667,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -689,7 +689,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -769,7 +769,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -777,7 +777,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -785,7 +785,7 @@ class ListsApi
         // path params
         if ($note_id !== null) {
             $resourcePath = str_replace(
-                '{'.'note_id'.'}',
+                '{' . 'note_id' . '}',
                 ObjectSerializer::toPathValue($note_id),
                 $resourcePath
             );
@@ -809,7 +809,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -839,12 +839,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -861,7 +861,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -935,7 +935,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -943,7 +943,7 @@ class ListsApi
         // path params
         if ($merge_id !== null) {
             $resourcePath = str_replace(
-                '{'.'merge_id'.'}',
+                '{' . 'merge_id' . '}',
                 ObjectSerializer::toPathValue($merge_id),
                 $resourcePath
             );
@@ -967,7 +967,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -997,12 +997,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1019,7 +1019,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1093,7 +1093,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -1101,7 +1101,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -1125,7 +1125,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1155,12 +1155,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1177,7 +1177,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1257,7 +1257,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -1265,7 +1265,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -1273,7 +1273,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -1297,7 +1297,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1327,12 +1327,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1349,7 +1349,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1423,7 +1423,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -1431,7 +1431,7 @@ class ListsApi
         // path params
         if ($webhook_id !== null) {
             $resourcePath = str_replace(
-                '{'.'webhook_id'.'}',
+                '{' . 'webhook_id' . '}',
                 ObjectSerializer::toPathValue($webhook_id),
                 $resourcePath
             );
@@ -1455,7 +1455,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1485,12 +1485,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1507,7 +1507,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1586,16 +1586,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -1608,7 +1608,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -1616,7 +1616,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -1640,7 +1640,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1670,12 +1670,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1692,7 +1692,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1759,16 +1759,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -1833,7 +1833,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -1863,12 +1863,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1885,7 +1885,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1954,16 +1954,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($include_total_contacts !== null) {
             $queryParams['include_total_contacts'] = ObjectSerializer::toQueryValue($include_total_contacts);
@@ -1972,7 +1972,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -1996,7 +1996,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2026,12 +2026,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2048,7 +2048,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2121,16 +2121,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2143,7 +2143,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -2167,7 +2167,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2197,12 +2197,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2219,7 +2219,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2298,16 +2298,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2320,7 +2320,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -2328,7 +2328,7 @@ class ListsApi
         // path params
         if ($report_id !== null) {
             $resourcePath = str_replace(
-                '{'.'report_id'.'}',
+                '{' . 'report_id' . '}',
                 ObjectSerializer::toPathValue($report_id),
                 $resourcePath
             );
@@ -2352,7 +2352,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2382,12 +2382,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2404,7 +2404,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2485,21 +2485,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -2523,7 +2523,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2553,12 +2553,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2575,7 +2575,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2644,21 +2644,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -2682,7 +2682,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2712,12 +2712,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2734,7 +2734,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2807,16 +2807,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -2837,7 +2837,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -2861,7 +2861,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -2891,12 +2891,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2913,7 +2913,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2988,21 +2988,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3010,7 +3010,7 @@ class ListsApi
         // path params
         if ($month !== null) {
             $resourcePath = str_replace(
-                '{'.'month'.'}',
+                '{' . 'month' . '}',
                 ObjectSerializer::toPathValue($month),
                 $resourcePath
             );
@@ -3034,7 +3034,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3064,12 +3064,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3086,7 +3086,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3159,16 +3159,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -3185,7 +3185,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3209,7 +3209,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3239,12 +3239,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3261,7 +3261,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3336,21 +3336,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3358,7 +3358,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -3382,7 +3382,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3412,12 +3412,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3434,7 +3434,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3513,16 +3513,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -3535,7 +3535,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3543,7 +3543,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -3567,7 +3567,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3597,12 +3597,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3619,7 +3619,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3700,21 +3700,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3722,7 +3722,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -3730,7 +3730,7 @@ class ListsApi
         // path params
         if ($interest_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_id'.'}',
+                '{' . 'interest_id' . '}',
                 ObjectSerializer::toPathValue($interest_id),
                 $resourcePath
             );
@@ -3754,7 +3754,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3784,12 +3784,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3806,7 +3806,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3875,21 +3875,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -3913,7 +3913,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -3943,12 +3943,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3965,7 +3965,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4038,16 +4038,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -4120,7 +4120,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -4144,7 +4144,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4174,12 +4174,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4196,7 +4196,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4271,21 +4271,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -4293,7 +4293,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -4317,7 +4317,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4347,12 +4347,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4369,7 +4369,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4444,28 +4444,28 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if (is_array($action)) {
             $queryParams['action'] = ObjectSerializer::serializeCollection($action, 'csv');
         } else
-            if ($action !== null) {
-                $queryParams['action'] = ObjectSerializer::toQueryValue($action);
-            }
+        if ($action !== null) {
+            $queryParams['action'] = ObjectSerializer::toQueryValue($action);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -4473,7 +4473,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -4497,7 +4497,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4527,12 +4527,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4549,7 +4549,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4628,16 +4628,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -4650,14 +4650,14 @@ class ListsApi
         if (is_array($activity_filters)) {
             $queryParams['activity_filters'] = ObjectSerializer::serializeCollection($activity_filters, 'csv');
         } else
-            if ($activity_filters !== null) {
-                $queryParams['activity_filters'] = ObjectSerializer::toQueryValue($activity_filters);
-            }
+        if ($activity_filters !== null) {
+            $queryParams['activity_filters'] = ObjectSerializer::toQueryValue($activity_filters);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -4665,7 +4665,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -4689,7 +4689,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4719,12 +4719,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4741,7 +4741,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4828,21 +4828,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -4850,7 +4850,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -4874,7 +4874,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -4904,12 +4904,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4926,7 +4926,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5001,21 +5001,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5023,7 +5023,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -5047,7 +5047,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5077,12 +5077,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5099,7 +5099,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5186,16 +5186,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -5208,7 +5208,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5216,7 +5216,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -5240,7 +5240,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5270,12 +5270,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5292,7 +5292,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5373,21 +5373,21 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5395,7 +5395,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -5403,7 +5403,7 @@ class ListsApi
         // path params
         if ($note_id !== null) {
             $resourcePath = str_replace(
-                '{'.'note_id'.'}',
+                '{' . 'note_id' . '}',
                 ObjectSerializer::toPathValue($note_id),
                 $resourcePath
             );
@@ -5427,7 +5427,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5457,12 +5457,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5479,7 +5479,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5552,16 +5552,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -5582,7 +5582,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5606,7 +5606,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5636,12 +5636,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5658,7 +5658,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5733,21 +5733,21 @@ class ListsApi
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
 
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5755,7 +5755,7 @@ class ListsApi
         // path params
         if ($merge_id !== null) {
             $resourcePath = str_replace(
-                '{'.'merge_id'.'}',
+                '{' . 'merge_id' . '}',
                 ObjectSerializer::toPathValue($merge_id),
                 $resourcePath
             );
@@ -5779,7 +5779,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5809,12 +5809,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5831,7 +5831,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5906,16 +5906,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($include_cleaned !== null) {
             $queryParams['include_cleaned'] = ObjectSerializer::toQueryValue($include_cleaned);
@@ -5932,7 +5932,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -5940,7 +5940,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -5964,7 +5964,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -5994,12 +5994,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6016,7 +6016,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6095,16 +6095,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -6129,7 +6129,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6137,7 +6137,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -6161,7 +6161,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6191,12 +6191,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6213,7 +6213,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6282,7 +6282,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6306,7 +6306,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6336,12 +6336,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6358,7 +6358,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6426,7 +6426,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6450,7 +6450,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6480,12 +6480,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6502,7 +6502,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6576,7 +6576,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6584,7 +6584,7 @@ class ListsApi
         // path params
         if ($survey_id !== null) {
             $resourcePath = str_replace(
-                '{'.'survey_id'.'}',
+                '{' . 'survey_id' . '}',
                 ObjectSerializer::toPathValue($survey_id),
                 $resourcePath
             );
@@ -6608,7 +6608,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6638,12 +6638,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6660,7 +6660,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6729,7 +6729,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6753,7 +6753,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6783,12 +6783,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6805,7 +6805,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6880,7 +6880,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -6888,7 +6888,7 @@ class ListsApi
         // path params
         if ($webhook_id !== null) {
             $resourcePath = str_replace(
-                '{'.'webhook_id'.'}',
+                '{' . 'webhook_id' . '}',
                 ObjectSerializer::toPathValue($webhook_id),
                 $resourcePath
             );
@@ -6912,7 +6912,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -6942,12 +6942,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6964,7 +6964,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7039,7 +7039,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7066,7 +7066,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7096,12 +7096,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7118,7 +7118,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7199,7 +7199,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7207,7 +7207,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -7234,7 +7234,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7264,12 +7264,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7286,7 +7286,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7373,7 +7373,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7381,7 +7381,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -7389,7 +7389,7 @@ class ListsApi
         // path params
         if ($interest_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_id'.'}',
+                '{' . 'interest_id' . '}',
                 ObjectSerializer::toPathValue($interest_id),
                 $resourcePath
             );
@@ -7416,7 +7416,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7446,12 +7446,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7468,7 +7468,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7553,7 +7553,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7561,7 +7561,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -7588,7 +7588,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7618,12 +7618,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7640,7 +7640,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7727,7 +7727,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7735,7 +7735,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -7743,7 +7743,7 @@ class ListsApi
         // path params
         if ($note_id !== null) {
             $resourcePath = str_replace(
-                '{'.'note_id'.'}',
+                '{' . 'note_id' . '}',
                 ObjectSerializer::toPathValue($note_id),
                 $resourcePath
             );
@@ -7770,7 +7770,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7800,12 +7800,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7822,7 +7822,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7903,7 +7903,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -7911,7 +7911,7 @@ class ListsApi
         // path params
         if ($merge_id !== null) {
             $resourcePath = str_replace(
-                '{'.'merge_id'.'}',
+                '{' . 'merge_id' . '}',
                 ObjectSerializer::toPathValue($merge_id),
                 $resourcePath
             );
@@ -7938,7 +7938,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -7968,12 +7968,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7990,7 +7990,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8071,7 +8071,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -8079,7 +8079,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -8106,7 +8106,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8136,12 +8136,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8158,7 +8158,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8239,7 +8239,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -8247,7 +8247,7 @@ class ListsApi
         // path params
         if ($webhook_id !== null) {
             $resourcePath = str_replace(
-                '{'.'webhook_id'.'}',
+                '{' . 'webhook_id' . '}',
                 ObjectSerializer::toPathValue($webhook_id),
                 $resourcePath
             );
@@ -8274,7 +8274,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8304,12 +8304,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8326,7 +8326,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8406,7 +8406,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -8414,7 +8414,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -8441,7 +8441,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8471,12 +8471,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8493,7 +8493,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8573,7 +8573,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -8581,7 +8581,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -8608,7 +8608,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8638,12 +8638,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8660,7 +8660,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8748,7 +8748,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8778,12 +8778,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8800,7 +8800,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8883,7 +8883,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -8910,7 +8910,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -8940,12 +8940,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8962,7 +8962,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9037,7 +9037,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9064,7 +9064,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9094,12 +9094,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9116,7 +9116,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9197,7 +9197,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9205,7 +9205,7 @@ class ListsApi
         // path params
         if ($interest_category_id !== null) {
             $resourcePath = str_replace(
-                '{'.'interest_category_id'.'}',
+                '{' . 'interest_category_id' . '}',
                 ObjectSerializer::toPathValue($interest_category_id),
                 $resourcePath
             );
@@ -9232,7 +9232,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9262,12 +9262,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9284,7 +9284,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9363,7 +9363,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9390,7 +9390,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9420,12 +9420,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9442,7 +9442,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9516,7 +9516,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9524,7 +9524,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -9548,7 +9548,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9578,12 +9578,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9600,7 +9600,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9681,7 +9681,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9689,7 +9689,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -9716,7 +9716,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9746,12 +9746,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9768,7 +9768,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9843,7 +9843,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -9870,7 +9870,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -9900,12 +9900,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9922,7 +9922,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9997,7 +9997,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10024,7 +10024,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10054,12 +10054,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10076,7 +10076,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10157,7 +10157,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10165,7 +10165,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -10192,7 +10192,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10222,12 +10222,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10244,7 +10244,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10325,7 +10325,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10333,7 +10333,7 @@ class ListsApi
         // path params
         if ($segment_id !== null) {
             $resourcePath = str_replace(
-                '{'.'segment_id'.'}',
+                '{' . 'segment_id' . '}',
                 ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
@@ -10360,7 +10360,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10390,12 +10390,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10412,7 +10412,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10487,7 +10487,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10514,7 +10514,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10544,12 +10544,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10566,7 +10566,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10641,7 +10641,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10668,7 +10668,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10698,12 +10698,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10720,7 +10720,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10793,16 +10793,16 @@ class ListsApi
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
         } else
-            if ($fields !== null) {
-                $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
-            }
+        if ($fields !== null) {
+            $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
+        }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
         } else
-            if ($exclude_fields !== null) {
-                $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
-            }
+        if ($exclude_fields !== null) {
+            $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
+        }
         // query params
         if ($count !== null) {
             $queryParams['count'] = ObjectSerializer::toQueryValue($count);
@@ -10847,7 +10847,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -10871,7 +10871,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -10901,12 +10901,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10923,7 +10923,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11008,7 +11008,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -11016,7 +11016,7 @@ class ListsApi
         // path params
         if ($subscriber_hash !== null) {
             $resourcePath = str_replace(
-                '{'.'subscriber_hash'.'}',
+                '{' . 'subscriber_hash' . '}',
                 ObjectSerializer::toPathValue($subscriber_hash),
                 $resourcePath
             );
@@ -11043,7 +11043,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -11073,12 +11073,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11095,7 +11095,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'PUT',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11168,7 +11168,7 @@ class ListsApi
         // path params
         if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{'.'list_id'.'}',
+                '{' . 'list_id' . '}',
                 ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
@@ -11192,7 +11192,7 @@ class ListsApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -11222,12 +11222,12 @@ class ListsApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11244,7 +11244,7 @@ class ListsApi
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11256,7 +11256,7 @@ class ListsApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

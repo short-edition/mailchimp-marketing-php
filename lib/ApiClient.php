@@ -2,6 +2,6 @@
 
 namespace MailchimpMarketing;
 
-class ApiClient extends Configuration
-{
-}
+use MailchimpMarketing\Configuration;
+
+class ApiClient extends Configuration {}

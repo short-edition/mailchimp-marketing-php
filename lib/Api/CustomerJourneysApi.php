@@ -47,7 +47,7 @@ class CustomerJourneysApi
     protected $config;
     protected $headerSelector;
 
-    public function __construct(?Configuration $config = null)
+    public function __construct(Configuration $config = null)
     {
         $this->client = new Client([
             'defaults' => [
@@ -138,7 +138,7 @@ class CustomerJourneysApi
         // path params
         if ($journey_id !== null) {
             $resourcePath = str_replace(
-                '{'.'journey_id'.'}',
+                '{' . 'journey_id' . '}',
                 ObjectSerializer::toPathValue($journey_id),
                 $resourcePath
             );
@@ -146,7 +146,7 @@ class CustomerJourneysApi
         // path params
         if ($step_id !== null) {
             $resourcePath = str_replace(
-                '{'.'step_id'.'}',
+                '{' . 'step_id' . '}',
                 ObjectSerializer::toPathValue($step_id),
                 $resourcePath
             );
@@ -173,7 +173,7 @@ class CustomerJourneysApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if ($headers['Content-Type'] === 'application/json') {
+            if($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
@@ -203,12 +203,12 @@ class CustomerJourneysApi
 
         // Basic Authentication
         if (!empty($this->config->getUsername()) && !empty($this->config->getPassword())) {
-            $headers['Authorization'] = 'Basic '.base64_encode($this->config->getUsername().":".$this->config->getPassword());
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
         }
 
         // OAuth Authentication
         if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -225,7 +225,7 @@ class CustomerJourneysApi
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -237,7 +237,7 @@ class CustomerJourneysApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 
