@@ -43,9 +43,9 @@ use MailchimpMarketing\ObjectSerializer;
 
 class AccountExportApi
 {
-    protected $client;
-    protected $config;
-    protected $headerSelector;
+    protected Client $client;
+    protected Configuration $config;
+    protected HeaderSelector $headerSelector;
 
     public function __construct(?Configuration $config = null)
     {
@@ -65,8 +65,7 @@ class AccountExportApi
 
     public function getAccountExports($export_id, $fields = null, $exclude_fields = null)
     {
-        $response = $this->getAccountExportsWithHttpInfo($export_id, $fields, $exclude_fields);
-        return $response;
+        return $this->getAccountExportsWithHttpInfo($export_id, $fields, $exclude_fields);
     }
 
     public function getAccountExportsWithHttpInfo($export_id, $fields = null, $exclude_fields = null)
@@ -98,9 +97,7 @@ class AccountExportApi
 
             $responseBody = $response->getBody();
             $content = $responseBody->getContents();
-            $content = json_decode($content);
-
-            return $content;
+            return json_decode($content);
 
         } catch (ApiException $e) {
             throw $e->getResponseBody();
@@ -125,15 +122,13 @@ class AccountExportApi
         // query params
         if (is_array($fields)) {
             $queryParams['fields'] = ObjectSerializer::serializeCollection($fields, 'csv');
-        } else
-        if ($fields !== null) {
+        } elseif ($fields !== null) {
             $queryParams['fields'] = ObjectSerializer::toQueryValue($fields);
         }
         // query params
         if (is_array($exclude_fields)) {
             $queryParams['exclude_fields'] = ObjectSerializer::serializeCollection($exclude_fields, 'csv');
-        } else
-        if ($exclude_fields !== null) {
+        } elseif ($exclude_fields !== null) {
             $queryParams['exclude_fields'] = ObjectSerializer::toQueryValue($exclude_fields);
         }
 
@@ -164,7 +159,7 @@ class AccountExportApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }

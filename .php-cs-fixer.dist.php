@@ -1,7 +1,16 @@
 <?php
 
-return PhpCsFixer\Config::create()
+declare(strict_types=1);
+
+$finder = new PhpCsFixer\Finder()
+    ->exclude('test')
+    ->exclude('tests')
+    ->in(__DIR__);
+
+// https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets
+return new PhpCsFixer\Config()
     ->setUsingCache(true)
+    ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
         'ordered_imports' => true,
@@ -15,9 +24,4 @@ return PhpCsFixer\Config::create()
         'single_blank_line_at_eof' => false,
         'blank_line_after_namespace' => false,
     ])
-    ->setFinder(
-        PhpCsFixer\Finder::create()
-        ->exclude('test')
-        ->exclude('tests')
-        ->in(__DIR__)
-    );
+    ->setFinder($finder);

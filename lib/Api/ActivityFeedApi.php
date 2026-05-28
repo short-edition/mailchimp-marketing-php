@@ -65,8 +65,7 @@ class ActivityFeedApi
 
     public function getChimpChatter($count = '10', $offset = '0')
     {
-        $response = $this->getChimpChatterWithHttpInfo($count, $offset);
-        return $response;
+        return $this->getChimpChatterWithHttpInfo($count, $offset);
     }
 
     public function getChimpChatterWithHttpInfo($count = '10', $offset = '0')
@@ -98,9 +97,7 @@ class ActivityFeedApi
 
             $responseBody = $response->getBody();
             $content = $responseBody->getContents();
-            $content = json_decode($content);
-
-            return $content;
+            return json_decode($content);
 
         } catch (ApiException $e) {
             throw $e->getResponseBody();
@@ -148,7 +145,7 @@ class ActivityFeedApi
         if (isset($_tempBody)) {
             $httpBody = $_tempBody;
 
-            if($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === 'application/json') {
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
