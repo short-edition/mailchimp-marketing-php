@@ -1,9 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MailchimpMarketing;
 
-use MailchimpMarketing\Configuration;
-
-class ApiClient extends Configuration
-{
-}
+class ApiClient extends Configuration {}
